@@ -21,7 +21,7 @@ function Student()
     async function  Load()
     {
        const result = await axios.get(
-           "http://localhost:9000/api/v1/Student/getall");
+           "https://njj.onrender.com/api/v1/Student/getall");
            setUsers(result.data);
            console.log(result.data);
     }
@@ -33,7 +33,7 @@ function Student()
           event.preventDefault();
       try
           {
-           await axios.post("http://localhost:9000/api/v1/Student/save",
+           await axios.post("https://njj.onrender.com/api/v1/Student/save",
           {
           studentname: studentname,
           studentaddress: studentaddress,
@@ -69,7 +69,7 @@ function Student()
    
      async function DeleteStudent(studentid)
      {
-          await axios.delete("http://localhost:9000/api/v1/Student/delete/" + studentid); 
+          await axios.delete("https://njj.onrender.com/api/v1/Student/delete/" + studentid); 
           alert("Student deleted Successfully");
           Load();
      }
@@ -80,7 +80,7 @@ function Student()
    
      try
          {
-          await axios.put("http://localhost:9000/api/v1/Student/edit/" + studentid ,
+          await axios.put("https://njj.onrender.com/api/v1/Student/edit/" + studentid ,
          {
   
           studentname: studentname,
