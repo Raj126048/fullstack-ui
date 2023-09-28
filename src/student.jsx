@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {useEffect, useState } from "react";
+import './student.css';
  
 function Student()
 {
@@ -21,7 +22,7 @@ function Student()
     async function  Load()
     {
        const result = await axios.get(
-           "http://localhost:9000/api/v1/Student/getall");
+           "https://njj.onrender.com/api/v1/Student/getall");
            setUsers(result.data);
            console.log(result.data);
     }
@@ -33,7 +34,7 @@ function Student()
           event.preventDefault();
       try
           {
-           await axios.post("http://localhost:9000/api/v1/Student/save",
+           await axios.post("https://njj.onrender.com/api/v1/Student/save",
           {
           studentname: studentname,
           studentaddress: studentaddress,
@@ -69,7 +70,7 @@ function Student()
    
      async function DeleteStudent(studentid)
      {
-          await axios.delete("http://localhost:9000/api/v1/Student/delete/" + studentid); 
+          await axios.delete("https://njj.onrender.com/api/v1/Student/delete/" + studentid); 
           alert("Student deleted Successfully");
           Load();
      }
@@ -80,7 +81,7 @@ function Student()
    
      try
          {
-          await axios.put("http://localhost:9000/api/v1/Student/edit/" + studentid ,
+          await axios.put("https://njj.onrender.com/api/v1/Student/edit/" + studentid ,
          {
   
           studentname: studentname,
@@ -106,7 +107,7 @@ function Student()
     }
   
     return (
-        <div>
+        <div className='full'>
            <h1>Student Details</h1>
            <div class="container mt-4" >
               <form>
@@ -197,9 +198,9 @@ function Student()
     
                   </div>
                   <div>
-                  <button   class="btn btn-primary mt-4"  onClick={save}>Register</button>
+                  <button   class="btn btn-primary mt-4 reg"  onClick={save}>Register</button>
     
-                  <button   class="btn btn-warning mt-4"  onClick={update}>Update</button>
+                  <button   class="btn btn-warning mt-4 up"  onClick={update}>Update</button>
                   </div>   
                 </form>
               </div>
