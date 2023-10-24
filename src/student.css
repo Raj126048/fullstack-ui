@@ -28,3 +28,10 @@
     width: 80% !important;
     background-color: rgba(18, 16, 16,0.5) !important;
 }
+@media (max-width:443px){
+ .table{
+    font-size: 11px !important;
+    width: 90% !important;
+    }
+}
+
